@@ -1,8 +1,14 @@
 from time import sleep
 from picamera import PiCamera
- 
-camera = PiCamera()
-camera.resolution = (1024, 768)
-camera.start_preview()
-sleep(2)
-camera.capture(‘test_photo.jpg’)
+import uuid
+
+c = PiCamera()
+c.resolution = (1024,768)
+c.start_preview()
+c.awb_mode = 'sunlight'
+uid = str(uuid.uuid1())+'.jpg'
+
+sleep(1)
+c.capture(uid)
+
+
