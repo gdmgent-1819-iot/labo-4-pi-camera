@@ -212,4 +212,35 @@ Om naar de livestream te surfen moet je eerst je ip adres van de raspberry pi op
 > ifconfig
  
 
-Vervolgens kun je naar de livestream surfen met <span style="color:red">*<Your_Pi_IP_Address>*</span>:8000.
+Vervolgens kun je naar de livestream surfen met <span style="color:red">*Your_Pi_IP_Address*</span>:8000
+
+## Speciaal effects 
+* Brightness
+* Image Effect
+* Awb Mode
+* Exposure Mode
+
+Dus we kunnen momenteel foto’s nemen en filmpjes opnemen. Nu gaan we daarop speciale effecten toevoegen.
+
+### Brightness
+```python
+from time import sleep
+from picamera import PiCamera
+ 
+camera = PiCamera()
+camera.resolution = (640, 480)
+//between 1 to 100
+camera.brightness = 70
+camera.start_recording()
+//record 10 seconds
+sleep(10)
+camera.stop_recording()
+print(‘End Preview’)
+```
+Foto onderaan met 70 procent brightness
+![Github Logo](assets/images/b43d9836-552c-11e9-8112-b827eb20fb87.jpg)
+**Lijst van image effecten:** none, negative, sketch, denoise, emboss, oilpaint, hatch, gpen, pastel, watercolor, film, blur, saturation, solarize, colorswap, cartoon, colorbalace, colorpoint, washedout 
+
+
+
+
