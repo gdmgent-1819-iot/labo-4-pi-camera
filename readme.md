@@ -11,6 +11,30 @@ De Raspberry Pi Camera V2 heeft een 8 megapixel Sony IMX219 image sensor met een
 ## De Raspberry Pi Camera module activeren
 ![Github Logo](assets/images/Schermafbeelding&#32;2019-03-26&#32;om&#32;12.51.47.png)
 
-Om de Raspberry Pi Camera module te gebruiken moet je de camera software op je Raspberry Pi activeren. In de desktop omgeving doe je dit als volgt: ga naar het Raspberry Pi configuratie scherm onder voorkeuren, open de interface tab, en zet de camera aan, zoals getoond in onderstaande afbeelding:
+Om de Raspberry Pi Camera module te gebruiken moet je de camera software op je Raspberry Pi activeren. In de desktop omgeving doe je dit als volgt: ga naar het Raspberry Pi configuratie scherm onder voorkeuren, open de interface tab, en zet de camera aan, zoals getoond in onderstaande afbeelding 
 Of je kunt dit ook doen via de terminal met het volgende commando:
 > sudo raspi-config
+
+Dan zou je de Raspberry Pi software configuratie moeten zien, selecteer dan de interface optie:
+![Github Logo](assets/images/Schermafbeelding&#32;2019-03-26&#32;om&#32;12.55.24.png)
+
+Activeer de camera en reboot de Pi:
+
+![Github Logo](assets/images/Schermafbeelding&#32;2019-03-26&#32;om&#32;12.55.32.png)
+
+## De camera verbinden
+![Github Logo](assets/images/Schermafbeelding&#32;2019-03-26&#32;om&#32;12.00.30.png)
+De Raspberry Pi Camera Module verbinden is gemakkelijk. Eerst en vooral moet je zorgen dat de Pi uit staat, dan verbindt je de camera aan de Pi via de CSI poort zoals getoond wordt op de volgende afbeelding. Zorg ervoor dat de camera is verbonden in de juiste richting, met de blauwe letters omhoog zoals op de afbeelding te zien is.
+
+## Een foto maken en opslaan
+De makkelijkste manier om de Raspberry Pi Camera te gebruiken is met de Python PiCamera package.
+We gaan eerst een nieuwe file maken genaamd **take_photo.py**.
+
+>nano take_photo.py
+
+Om de camera te gebruiken moeten we deze importeren in onze file, vervolgens bepalen we de resolutie, tonen we een preview, en vervolgens slaan we de foto op. Dit alles kan met de volgende code:
+```python
+function test() {
+ console.log("look ma’, no spaces");
+}
+```
