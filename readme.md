@@ -34,7 +34,12 @@ We gaan eerst een nieuwe file maken genaamd **take_photo.py**.
 
 Om de camera te gebruiken moeten we deze importeren in onze file, vervolgens bepalen we de resolutie, tonen we een preview, en vervolgens slaan we de foto op. Dit alles kan met de volgende code:
 ```python
-function test() {
- console.log("look ma’, no spaces");
-}
+from time import sleep
+from picamera import PiCamera
+ 
+camera = PiCamera()
+camera.resolution = (1024, 768)
+camera.start_preview()
+sleep(2)
+camera.capture(‘test_photo.jpg’)
 ```
