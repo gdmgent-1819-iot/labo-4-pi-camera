@@ -1,6 +1,3 @@
-## Onderzoeksrapport door Hannes De Baere en Nawang Tendar
-
-
 # Onderzoeksrapport: Raspberry Pi - Camera v2
 ### *Hannes De Baere - Nawang Tendar*
 ![Github Logo](assets/images/picamera_27_web.jpg)
