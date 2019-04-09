@@ -59,7 +59,7 @@ We gaan eerst een nieuwe file maken genaamd **record_video.py**.
 
 Om de camera te gebruiken moeten we deze importeren in onze file, vervolgens bepalen we de resolutie, tonen we een preview, en vervolgens slaan we de video op. Dit alles kan met de volgende code:
 
-```
+```python
 from time import sleep
 from picamera import PiCamera
  
@@ -73,3 +73,45 @@ camera.stop_recording()
  
 print(‘Finished recording’)
 ```
+Met de volgende code kun je het script runnen:
+
+> python record_video.py
+
+Dit commando maakt dan een video van 5 seconden met de Raspberry Pi Camera en slaat dit op onder de naam **test_video.h264**. Om de video weer te geven op de Raspberry Pi met de Raspbian Desktop environment, kun je de omxplayer software gebruiken met het volgende commando in de terminal.
+
+ 
+> omxplayer test_video.h264
+
+## De camera instellen voor livestream
+Voordat we de camera kunnen gebruiken voor livestream moet je zorgen dat alle voorgaande stappen zijn doorlopen. Om de livestream op te zetten beginnen we met een nieuw bestand aan te maken:
+
+ 
+> nano webcam_system.py
+
+Vervolgens open je dat bestand, we gaan stap voor stap de code blokken toevoegen. Als eerste doen we al onze imports met onderstaande code:
+ 
+```python
+import io
+import picamera
+import logging
+import SocketServer
+from threading import Condition
+import BaseHTTPServer
+server = BaseHTTPServer
+```
+Vervolgens gaan we html opmaak meegeven voor als iemand naar onze livestream surft.
+```python
+PAGE="""\
+<html>
+<head>
+<title>Raspberry Pi - Surveillance Camera</title>
+</head>
+<body>
+<center><h1>Raspberry Pi - Surveillance Camera</h1></center>
+<center><img src="stream.mjpg" width="640" height="480"></center>
+</body>
+</html>
+"""
+```
+
+
