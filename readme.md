@@ -239,8 +239,57 @@ print(‘End Preview’)
 ```
 Foto onderaan met 70 procent brightness
 ![Github Logo](assets/images/b43d9836-552c-11e9-8112-b827eb20fb87.jpg)
+### image effecten
 **Lijst van image effecten:** none, negative, sketch, denoise, emboss, oilpaint, hatch, gpen, pastel, watercolor, film, blur, saturation, solarize, colorswap, cartoon, colorbalace, colorpoint, washedout 
+```python
+from time import sleep
+from picamera import PiCamera
+ 
+camera = PiCamera()
+camera.resolution = (640, 480)
+//between 1 to 100
+camera.image_effect = ‘emboss’
+camera.start_recording()
+//record 10 seconds
+sleep(10)
+camera.stop_recording()
+print(‘End Preview’)
+```
+![Github Logo](assets/images/dad5a1fa-552c-11e9-a47d-b827eb20fb87.jpg)
 
+### Awb Mode
+**Awb Mode lijst:** off, auto, sunlight,cloudy, shade, tungsten, fluorescent, incandescent, flash, horizon
 
+```python
+from time import sleep
+from picamera import PiCamera
+ 
+camera = PiCamera()
+camera.resolution = (640, 480)
+//between 1 to 100
+camera.awb_mode = ‘sunlight’
+camera.start_recording()
+//record 10 seconds
+sleep(10)
+camera.stop_recording()
+print(‘End Preview’)
+```
+![Github Logo](assets/images/136c5c2a-552d-11e9-a725-b827eb20fb87.jpg)
 
+### Exposure
+**Exposure mode lijst:** off, auto, night, nightpreview, backlight, spotlight, sports, snow, beach, verylong, fixedfps, antishake, fireworks
 
+```python
+from time import sleep
+from picamera import PiCamera
+ 
+camera = PiCamera()
+camera.resolution = (640, 480)
+//between 1 to 100
+camera.exposure = ‘fireworks’
+camera.start_recording()
+//record 10 seconds
+sleep(10)
+camera.stop_recording()
+print(‘End Preview’)
+```
