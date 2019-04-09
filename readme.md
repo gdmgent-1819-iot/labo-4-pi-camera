@@ -43,3 +43,8 @@ camera.start_preview()
 sleep(2)
 camera.capture(‘test_photo.jpg’)
 ```
+Met de volgende code kun je het script runnen:
+
+```
+python take_photo.py
+```
