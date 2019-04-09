@@ -45,6 +45,31 @@ camera.capture(‘test_photo.jpg’)
 ```
 Met de volgende code kun je het script runnen:
 
+
+> python take_photo.py
+
+Dit commando neemt dan een foto met de Raspberry Pi Camera en slaat dit op onder de naam **test_photo.jpg**:
+![Github Logo](assets/images/test_2.jpg)
+
+## Een video opnemen en opslaan
+We gaan eerst een nieuwe file maken genaamd **record_video.py**.
+
+ 
+> nano record_video.py
+
+Om de camera te gebruiken moeten we deze importeren in onze file, vervolgens bepalen we de resolutie, tonen we een preview, en vervolgens slaan we de video op. Dit alles kan met de volgende code:
+
 ```
-python take_photo.py
+from time import sleep
+from picamera import PiCamera
+ 
+camera = PiCamera()
+camera.resolution = (640, 480)
+ 
+camera.start_preview(‘test_video.h264’)
+camera.start_recording()
+sleep(5)
+camera.stop_recording()
+ 
+print(‘Finished recording’)
 ```
