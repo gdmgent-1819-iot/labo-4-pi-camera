@@ -209,7 +209,7 @@ Om naar de livestream te surfen moet je eerst je ip adres van de raspberry pi op
 > ifconfig
  
 
-Vervolgens kun je naar de livestream surfen met <span style="color:red">*Your_Pi_IP_Address*</span>:8000
+Vervolgens kun je naar de livestream surfen met <span style="color:red;">**Your_Pi_IP_Address**</span>:8000
 
 ## Speciaal effects 
 * Brightness
